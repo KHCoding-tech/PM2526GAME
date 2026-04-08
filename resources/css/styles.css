@@ -10,7 +10,7 @@
 }
 
 
-.dialogue-box {
+.dialogue_box {
     position: fixed;
     left: 50%;
     bottom: -100%;
@@ -19,36 +19,39 @@
     transform: translate(-50%, 0);
     transition: bottom 1s ease-in-out;
 }
-.dialogue-box .portrait {
+.dialogue_box .portrait {
     width: 15rem;
     height: 15rem;
     border: var(--dialogue-border-color) 8px solid;
     background-color: var(--dialogue-image-background-color);
 }
-.dialogue-box .portrait img {
+.dialogue_box .portrait img {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
-.dialogue-box .right {
+.dialogue_box .right {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     margin-left: 1rem;
 }
-.dialogue-box .name {
+.dialogue_box .name {
     width: fit-content;
     padding: 1rem;
     font-family: var(--dialogue-name-font);
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: 2px;
     font-size: 3rem;
     background-color: var(--dialogue-name-bg-color);
     color: var(--dialogue-text-color);
     border: var(--dialogue-border-color) 4px solid;
-    text-shadow: -3px 3px 0 var(--dialogue-border-color);
+    text-shadow: -2.5px 2.5px 0 var(--dialogue-border-color);
 }
-.dialogue-box .text {
+.dialogue_box .text {
+    width: 30vw;
+    height: 7rem;
+    overflow: auto;
     font-family: var(--dialogue-text-font);
     font-size: 1.5rem;
     line-height: 1.5;
@@ -57,4 +60,13 @@
     color: var(--dialogue-text-color);
     border: var(--dialogue-border-color) 4px solid;
     flex-grow: 1;
+
+    /* get rid of scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* also get rid of text scrollbar but for webkit browsers */
+.dialogue_box .text::-webkit-scrollbar {
+  display: none;
 }
