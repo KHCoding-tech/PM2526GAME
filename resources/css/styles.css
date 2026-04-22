@@ -1,0 +1,104 @@
+:root {
+    --dialogue-border-color: #472d30;
+    --dialogue-bg-color: #723d46;
+    --dialogue-name-bg-color: #e26d5c;
+    --dialogue-text-color: #ffe1a8;
+    --dialogue-image-background-color: #aa5551;
+
+    --dialogue-name-font: 'Pixelify Sans', serif;
+    --dialogue-text-font: 'Pixelify Sans', sans-serif;
+}
+
+
+.dialogue_box {
+    position: fixed;
+    left: 50%;
+    bottom: -100%;
+    display: none;
+    flex-direction: row;
+    transform: translate(-50%, 0);
+    transition: bottom 1s ease-in-out;
+}
+.dialogue_box .portrait {
+    width: 15rem;
+    height: 15rem;
+    border: var(--dialogue-border-color) 8px solid;
+    background-color: var(--dialogue-image-background-color);
+}
+.dialogue_box .portrait img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.dialogue_box .right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 1rem;
+}
+.dialogue_box .name {
+    width: fit-content;
+    padding: 0.75rem;
+    font-family: var(--dialogue-name-font);
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 200%;
+    background-color: var(--dialogue-name-bg-color);
+    color: var(--dialogue-text-color);
+    border: var(--dialogue-border-color) 4px solid;
+    text-shadow: -2.5px 2.5px 0 var(--dialogue-border-color);
+}
+.dialogue_box .text {
+    width: 30vw;
+    height: 7rem;
+    overflow: auto;
+    font-family: var(--dialogue-text-font);
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: 1rem;
+    background-color: var(--dialogue-bg-color);
+    color: var(--dialogue-text-color);
+    border: var(--dialogue-border-color) 4px solid;
+    flex-grow: 1;
+
+    /* get rid of scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+/* also get rid of scrollbar*/
+.dialogue_box .text::-webkit-scrollbar {
+  display: none;
+}
+.dialogue_box .options {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: fit-content;
+    max-width: 15vw;
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    padding-bottom: 0;
+    transform: translate(100%, 0);
+    transition: bottom 1s ease-in-out;
+}
+.dialogue_box .options .option_button {
+    font-family: var(--dialogue-text-font);
+    font-size: min(1.5rem, 150%);
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--dialogue-name-bg-color);
+    color: var(--dialogue-text-color);
+    border: var(--dialogue-border-color) 4px solid;
+    text-shadow: -2.5px 2.5px 0 var(--dialogue-border-color);
+    cursor: pointer;
+}
+.dialogue_box .options .option_button.template {
+    display: none;
+}
+
+/* also get rid of text scrollbar but for webkit browsers */
+.dialogue_box .text::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,98 @@
+/* CLT - HPX */
+:root {
+  --pixel-size: 0.5vw;
+  --face-color: #2c2c2c;
+  --hair-color: #1b1b1b;
+  --border-weight: 0.4vw;
+}
+
+.pixel-canvas {
+  position: relative;
+  width: 50vw;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.face,
+.hair,
+.ear,
+.neck {
+  background-size: var(--pixel-size) var(--pixel-size);
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+.face {
+  position: absolute;
+  top: 20%;
+  left: 23%;
+  width: 33%;
+  height: 50%;
+  background-color: var(--face-color);
+  border: var(--border-weight) solid #000;
+  border-top-right-radius: 20%;
+  border-bottom-right-radius: 40%;
+  border-top-left-radius: 20%;
+  border-bottom-left-radius: 40%;
+}
+
+.face::before {
+  content: '';
+  position: absolute;
+  top: 46%;
+  left: -20%;
+  width: 20%;
+  height: 23%;
+  background-color: var(--face-color);
+  border: var(--border-weight) solid #000;
+  border-right: none;
+  z-index: -1;
+  border-top-right-radius: 40%;
+  border-bottom-right-radius: 40%;
+  border-top-left-radius: 40%;
+  border-bottom-left-radius: 50%;
+}
+
+.hair {
+  position: absolute;
+  top: -20%;
+  left: -12.5%;
+  width: 120%;
+  height: 50%;
+  background-color: var(--hair-color);
+  border: var(--border-weight) solid #000;
+  z-index: 2;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  border-bottom-right-radius: 6%;
+  border-bottom-left-radius: 6%;
+}
+
+.ear {
+  position: absolute;
+  top: 46%;
+  right: -20%;
+  width: 20%;
+  height: 23%;
+  background-color: var(--face-color);
+  border: var(--border-weight) solid #000;
+  z-index: -1;
+  border-top-right-radius: 40%;
+  border-bottom-right-radius: 50%;
+  border-top-left-radius: 40%;
+  border-bottom-left-radius: 40%;
+}
+
+.neck {
+  position: absolute;
+  bottom: -26%;
+  left: 17.2%;
+  width: 60%;
+  height: 30%;
+  background-color: var(--face-color);
+  border: var(--border-weight) solid #000000;
+  z-index: -1;
+}
